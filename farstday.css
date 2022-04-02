@@ -1,0 +1,26 @@
+h1 {
+    background-color: aliceblue;
+    width: 200px;
+    margin: 0%;
+    border: 0px;
+    position: relative;
+    left: 40%;
+}
+
+#farst_memo1 { 
+    background-color: aquamarine;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    position: relative;
+    left: -25%;
+}
+#farst_memo2 {
+    background-color: rgb(187, 255, 0);
+    width: 50%;
+    height: auto;
+    margin: auto;
+    position: relative;
+    left: 25%;
+    bottom: 150px;
+}

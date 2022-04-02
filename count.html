@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>文字カウントアプリ</title>
+    </head>
+    <body>
+        <textarea id="text" cols="50" row="7"></textarea>
+        <p id="count">0文字</p>
+        <script>
+            //HTML要素の取得
+            const text = document.getElementById("text");
+            const count = document.getElementById("count");
+            //文字数カウント
+            text.addEventListener("keyup", () => {
+            //テキストエリアの文字列を取得
+                const inputText = text.value.replace(/[\n\s]/g,"");
+            //文字数を取得＆出力する
+            count.textContent = inputText.length + '文字';
+            });
+        </script>
+    </body>
+</html>

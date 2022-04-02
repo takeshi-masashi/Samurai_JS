@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>転載</title>
+    </head>
+    <body>
+        <h1>動物関連の最新記事 by Qiita</h1>
+        <button id="btn">更新</button>
+        <ul id="list"></ul>
+        <script>    //引っ張る記事の内容とHTMLの吸出し
+            const url = 'https://qiita.com/api/v2/tags/転職/items';
+            const btn = document.getElementById('btn');
+            const list = document.getElementById('list');
+            const createList = item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.url;
+                li.textContent = item.title;
+                a.appendChild(li);
+                list.appendChild(a);
+            }
+            btn.addEventListener('click', () => {
+                list.innerHTML = ''; // 結果表示部分をリセット
+                fetch(url)
+                .then(data => data.json())
+                .then(data => {
+                    data.forEach(item => createList(item))
+                })
+            })
+        </script>
+    </body>
+</html>
